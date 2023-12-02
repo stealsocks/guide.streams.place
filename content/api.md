@@ -17,7 +17,7 @@ Learn how to use the simple REST endpoints to fetch Drops to display on your own
 
 ## Authentication 
 
-The GET endpoint requires no authentication and is available directly at the `username/json` route. It only returns a list of your public Drops, private ones stay protected.
+The GET endpoint requires no authentication and is available directly at the `username/json` route. If you have a private Stream, you'll have to make your request to username/keyphrase/json
 
 For POST requests, your keyphrase is required to be added to the header of your request as an authentication method.
 
@@ -28,7 +28,7 @@ Returns an array of all the user's public Drops. Each element of the array corre
 | Property | Contents | Example |
 |-|-|-|
 | **timestamp** | UNIX-style timestamp for when the Drop was created | `1681908281288` |
-| **id** | A (shortened) UUID number for a Drop | `MjZlNTgxMjAt` |
+| **id** | A unique ID for a Drop | `1084819741874431` |
 | **html** | HTML representation of the Drop's contents, as rendered by the bot | `"<p>If you can see this message, it means that the POST endpoint works…</p>\n"` |
 | **text** | The raw text that the bot recieved from Telegram | `"If you can see this message, it means that the POST endpoint works..."` |
 | **last_edit** | UNIX-style timestamp for when the Drop was last edited | `1680172933000` |
@@ -36,7 +36,7 @@ Returns an array of all the user's public Drops. Each element of the array corre
 
 There are three types of media objects that the `media` array might contain:
 
-#### I. photo
+#### I. photo (.jpg, .png, etc)
 
 ```json 
 {
@@ -46,7 +46,7 @@ There are three types of media objects that the `media` array might contain:
 }
 ```
 
-#### II. animation
+#### II. animation (.gif)
 
 ```json
 {
@@ -77,7 +77,7 @@ To bring it all together, here's an example response from a Stream that contains
 [
 	{
 		 "timestamp": "1681908281288",
-		 "id": "MjZlNTgxMjAt", 
+		 "id": "12094823072385", 
 		 "html": "",
 		 "text": "",
 		 "last_edit": "",
@@ -86,7 +86,7 @@ To bring it all together, here's an example response from a Stream that contains
 
 	{
 		 "timestamp": "1681908220941",
-		 "id": "192jWiE9jneX", 
+		 "id": "1209481904283", 
 		 "html": "",
 		 "text": "",
 		 "last_edit": "",
@@ -95,7 +95,7 @@ To bring it all together, here's an example response from a Stream that contains
 
 	{
 		 "timestamp": "1681901303130",
-		 "id": "I093IE139jrn", 
+		 "id": "`10981309423487", 
 		 "html": "",
 		 "text": "",
 		 "last_edit": "",
@@ -132,8 +132,6 @@ fetch('https://streams.place/judah/api/post',
         It's pretty **cool** to be able to do this, no?`,
         // This informs the bot that it should render this text as Markdown. (default: true)
         process_as_markdown: true,
-        // This informs the bot to store this Drop as a private one. (default: false)
-        protected: false
 
     }),
     headers: {
@@ -158,12 +156,12 @@ fetch('https://streams.place/judah/api/post',
 ```
 
 ### Parameters
-If `process_as_markdown` is set to `true`, the bot processes any markdown characters in the text to HTML.
+If `process_as_markdown` is set to `true`, the bot processes any markdown entities in the text to HTML.
 
-If `protected` is set to `true`, the Drop will be saved as a [private](/commands#protect) Drop.
+<!-- If `protected` is set to `true`, the Drop will be saved as a [private](/commands#protect) Drop. -->
 
 
-### Success tatus
+### Success status
 If the request was successful, you should recieve a JSON payload with the `success` value set to `true`. If not, a value of `false` will return instead, along with a `message` value that informs you why the request failed. 
 
 Below are the error messages you might see, and explanations for what caused them:

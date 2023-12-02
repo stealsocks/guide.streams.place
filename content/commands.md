@@ -7,24 +7,27 @@ description: "Commands • Streams"
 <div id="menu">
     <ul>     
     	<li> <a href="#about"> /about </a>
-        <li><a href="#clean"> /clean </a></li>
         <li><a href="#delete"> /delete </a></li>
-        <li><a href="#editor"> /editor </a></li>
+        <li><a href="#dashboard"> /dashboard </a></li>
         <li><a href="#export"> /export </a></li>
-        <li><a href="#faq"> /faq </a></li>
         <li><a href="#info"> /info </a></li>
         <li><a href="#keyphrase"> /keyphrase </a></li>
         <li><a href="#layout"> /layout </a></li>
-        <li><a href="#mydrops"> /mydrops </a></li>
-        <li><a href="#newusername"> /newusername </a></li>
-        <li><a href="#protect"> /protect </a></li>
+        <li><a href="#layouts"> /layouts </a></li>
+        <li><a href="#link"> /link </a></li>
+        <li><a href="#login"> /login </a></li>
+        <li><a href="#password"> /password </a></li>
         <li><a href="#recover"> /recover </a></li>
         <li><a href="#rss"> /rss </a></li>
+        <li><a href="#subscribe"> /subscribe </a></li>
+        <li><a href="#unsubscribe"> /unsubscribe </a></li>
+        <li><a href="#tag"> /tag </a></li>
+        <li><a href="#tags"> /tags </a></li>
         <li><a href="#title"> /title </a></li>
         <li><a href="#theme"> /theme </a></li>
-        <li><a href="#unprotect"> /unprotect </a></li>
+        <li><a href="#themes"> /themes </a></li>
         <li><a href="#url"> /url </a></li>
-        <li><a href="#delete"> /delete </a></li>
+        <li><a href="#username"> /username </a></li>
     </ul>
 </div>
 
@@ -35,18 +38,11 @@ Use this, followed by a description for your page, to craete an About section fo
 
 **Example usage:** `/about This is a really cool stream, trust me.`
 
-
-### /clean
-Sometimes, you might delete a Telegram message without first using the /delete command to remove the associated Drop from your Stream. This is when you need to use /clean, followed by the ID of the Drop (which you can get using the [/mydrops](#ymdrops) command), to accomplish what /delete would. 
-
-**Example usage:** `/clean 53901890342400359`
-
-
 ### /delete
 Reply to a message with this command to remove it from your Stream. You can delete the message itself, but only *after* you've done this.
 
-### /editor
-Returns a link to your theme editor, the page that lets you customise your Stream's style using CSS.
+### /dashboard
+Returns a link to your account dashboard, where you can manage your posts and style settings.
 
 ### /export
 Returns the URL at which your ready-to-export Markdown data is available.
@@ -58,30 +54,28 @@ Returns a list of frequent user queries, and their answers.
 Will display information about the Streams project, and basic usage instructions.
 
 ### /keyphrase
-Returns the three word keyphrase that acts as authentication for private Streams, exports, and the theme-editor.
+Use it to view or change you keyphrase that is used to make your Stream private.
+
+**Example usage:** `/keyphrase new-keyphrase` (or `/keyphrase`)
 
 ### /layout 
 Follow this command with the name of a layout to set a new layout for your Stream.
 
-**Example usage:** `/layout feed`
+**Example usage:** `/layout wall`
 
 ### /layouts
 Provides you with a list of [layout](/#layout-gallery) names you can choose from.
 
-### /mydrops
-Returns a list of your last ten Drops, with their associated IDs, usually used with the /clean command.
+### /link
+Reply to a message with this command to get the link to that particular Drop.
 
-### /newkeyphrase
-Use this command if you want to change your keyphrase. Useful in cases where you feel like the security your keyphrase has been compromised. If you've only forgotten your keyphrase, use the [/keyphrase](#keyphrase) command instead.
+### /login
+Recieve a link to your dashboard, and your login credentials.
 
-### /newusername
-Followed by your new username to chage the url location of your stream. Valid usernames need to be lower-case letters, and must not already be in use by another Stream. 
+### password
+Change your password that you use to log into the web dashboard. 
 
-**Example usage:** `/newusername joodaloop`
-
-
-### /protect
-Reply to a Drop with this command to hide it from your public Stream. It will now only be available on your private Stream (your-url/username/keyphrase). Use [/unprotect](#unprotect) to bring it back to the public one.
+**Example usage:** `/password very-secure-code`
 
 ### /recover
 Reply to the Telegram message associated with a deleted Drop to change it's status to undeleted. 
@@ -89,8 +83,28 @@ Reply to the Telegram message associated with a deleted Drop to change it's stat
 ### /rss
 Returns a link to your Stream's RSS feed.
 
+
+### /subscribe
+Use this command, followed by a link (or the name of) the Stream you want to subscribe to. You can browse through your subscriptions at the <a href="https://streams.place/feed"> Feed </a> page.
+
+**Example usage:** `/subscribe https://streams.place/judah` or `/subscribe judah`
+
+### unsubscribe
+Same thing, use this followed by either a link or name of a Stream you're subscribed to in order to unsubscribe from it.
+
+
+### /tag
+
+To use tags, you need to create it first using `/tag create tag-name`. You can then add the tag to a Drop by replying to it with `/tag tag-name`. 
+
+**Example usage:** `/tag create workout` and replying with `/tag workout`
+
+### /tags
+This will return a list of tags and their respective aliases.
+
+
 ### /title
-When you create your Stream, your username is used as the title for the Stream's page. Use this command to set your own title. 
+When you create your Stream, your Telegram username is used as the title for the Stream's page. Use this command to set your own title. 
 
 **Example usage:** `/title My Cool Stream`
 
@@ -102,10 +116,10 @@ Follow this command with the name of a theme to set a new theme for your Stream.
 ### /themes 
 Provides you with a list of [themes](/#theme-gallery) you can choose from.
 
-### /unprotect
-Reply to a drop with /unprotect to change it's privacy status back to public and have it show up on your public Stream again.
-
 ### /url
-Returns the URL that your stream is currently located at.
+Returns the link to your Stream.
 
+### /username
+Change your account's username (used for web login).
 
+**Example usage:** `/username coolname`

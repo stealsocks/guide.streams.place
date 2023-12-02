@@ -7,9 +7,9 @@
       }
 
 body {
-  font-size: 17px;
+  font-size: 18px;
   font-weight:  400;
-  background: #fefefb ;
+  background: #E9EAF3;
   color: #333;
   line-height: 1.5em;
   scroll-behavior: smooth;
@@ -22,6 +22,7 @@ html{
 
 nav a{
   padding-right: 20px;
+  text-decoration: none;
 }
 
 img{
@@ -40,7 +41,7 @@ img{
 }
 
 q {
-  border-left: solid 2px red;
+  border-left: solid 2px darkblue;
   display: inline;
 }
 
@@ -60,11 +61,15 @@ pre.inline{
 
 .quote {
   padding-left: 1rem;
-  border-left: solid 2px red;
+  border-left: solid 2px darkblue;
 }
 
-p > code{
-  color: red;
+code{
+  color: darkblue;
+  background: #00008b22;
+  font-size: 0.9em;
+  padding: 4px 6px;
+  border-radius: 6px;
 }
 
 .main {
@@ -72,7 +77,7 @@ p > code{
   float: left;
   width: 100%;
   margin: 2rem 5%;
-  max-width: 600px;
+  max-width: 650px;
   width: 90%;
   scroll-behavior: smooth;
 }
@@ -82,6 +87,7 @@ p > code{
   text-decoration-color: var(--link);
   text-decoration-thickness:  2px;
   color:  var(--link);
+  font-weight: 600;
  }
 
 a:hover{
@@ -95,8 +101,15 @@ a:hover{
   top: 2rem;
   right: 20px;
   text-align: right;
-  font-size: 14px;
-  width: 100px;  
+  font-size: 15px;
+  width: 150px;  
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.3;
+}
+
+#menu:hover{
+  opacity: 1;
 }
 
 #menu .title{
@@ -107,9 +120,8 @@ a:hover{
 }
 #menu ul {
   list-style-type: none;
-  margin: 5px 0px;
   padding: 0;
-   line-height: 0.8em;
+  line-height: 1em;
 }
 
 #menu li a {
@@ -135,6 +147,7 @@ h1{
 
 h1 a{
   text-decoration: none;
+  font-weight: unset;
 }
 
  h2 {
@@ -158,6 +171,7 @@ table{
   width: 100%;
   text-align: left;
   margin: 1.5rem 0rem;
+  font-size: inherit;
 }
 
 td, th{
