@@ -13,7 +13,7 @@ We've added a bunch of new features in this new version of Streams.
 
 **Web dashboard.** This is a big one. You can now edit, create and delete Drops from the web. Just send the `/dashboard` command to your bot to receive the link and login details. 
 
-**Tags.** You can create and use tags with the new [/tag](/commands#tag) command. The web editor lets you edit them and set names and aliases so you can use "/tag read" but have your tag show up as "Reading Log" on your Stream.
+**Tags.** You can create and use tags with the new [/tag](/commands#tag) command. The web editor lets you edit them and set names and aliases (which let you use "/tag read" but have your tag show up as "Reading Log" on your Stream).
 
 **Subscriptions.** You can create a Feed of your favourite Streams by subscribing to them from the web or using the [/subscribe](/commands#subscribe) command.
 
