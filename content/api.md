@@ -114,8 +114,8 @@ You can use the JSON to render your Stream to your own site, or create your own 
 
 ## POST route (username/api/post)
 
-***Note:** This endpoint has a rate-limit of 20 posts per minute.*
-
+***Note:** This endpoint has been deprecated as we work on a new identity system for Streams v3.*
+<!-- 
 Accepts a text string to store as a new Drop. The text for the new Drop should be added to a `message` entry in the request body.
 
 You need to add `keyphrase` field to your headers object with your keyphrase as the value, in order to authenticate your request. 
@@ -158,7 +158,7 @@ fetch('https://streams.place/judah/api/post',
 ### Parameters
 If `process_as_markdown` is set to `true`, the bot processes any markdown entities in the text to HTML.
 
-<!-- If `protected` is set to `true`, the Drop will be saved as a [private](/commands#protect) Drop. -->
+If `protected` is set to `true`, the Drop will be saved as a [private](/commands#protect) Drop. 
 
 
 ### Success status
@@ -198,4 +198,4 @@ Please make sure your keyphrase is correct, use the /keyphrase command to check 
 	"message": "ERROR 500: Something went wrong."
 }
 ```
-If you aren't trying something evil, this is probably my fault. Try again, and let me know if the error persists.
+If you aren't trying something evil, this is probably my fault. Try again, and let me know if the error persists. -->
